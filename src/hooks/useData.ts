@@ -12,7 +12,7 @@ const useData = <T>(
   requestConfig?: AxiosRequestConfig,
   deps?: any[]
 ) => {
-  // const controller = new AbortController()
+  const controller = new AbortController()
 
   const [data, setData] = useState<T[]>([])
   const [error, setError] = useState('')
@@ -22,7 +22,10 @@ const useData = <T>(
     () => {
       setLoading(true)
       apiClient
-        .get<FetchResponse<T>>(endpoint, { ...requestConfig })
+        .get<FetchResponse<T>>(endpoint, {
+          signal: controller.signal,
+          ...requestConfig,
+        })
         .then((res) => {
           setData(res.data.results)
           setLoading(false)
@@ -33,7 +36,7 @@ const useData = <T>(
           setLoading(false)
         })
 
-      // return () => controller.abort() { signal: controller.signal }
+      return () => controller.abort()
     },
     deps ? [...deps] : []
   )
