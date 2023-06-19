@@ -1,13 +1,13 @@
-import { Flex, Grid, GridItem, HStack, Show } from '@chakra-ui/react'
-import NavBar from './components/NavBar'
-import GameGrid from './components/GameGrid'
-import GenreList from './components/GenreList'
+import { Flex, Grid, GridItem, Show } from '@chakra-ui/react'
 import { useState } from 'react'
-import { Genre } from './hooks/useGenres'
-import PlatformSelector from './components/PlatformSelector'
-import { Game, Platform } from './hooks/useGames'
-import SortSelector from './components/SortSelector'
+import GameGrid from './components/GameGrid'
 import GameHeading from './components/GameHeading'
+import GenreList from './components/GenreList'
+import NavBar from './components/NavBar'
+import PlatformSelector from './components/PlatformSelector'
+import SortSelector from './components/SortSelector'
+import { Genre } from './hooks/useGenres'
+import { Platform } from './hooks/usePlatforms'
 
 export interface GameQuery {
   genre: Genre | null

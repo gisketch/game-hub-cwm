@@ -1,16 +1,8 @@
-import { useEffect, useState } from 'react'
 import apiClient from '../services/api-client'
-import { CanceledError } from 'axios'
 import { FetchResponse } from '../services/api-client'
-import { Genre } from './useGenres'
 import { GameQuery } from '../App'
 import { useQuery } from '@tanstack/react-query'
-
-export interface Platform {
-  id: number
-  name: string
-  slug: string
-}
+import { Platform } from './usePlatforms'
 
 export interface Game {
   id: number
