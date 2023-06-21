@@ -24,8 +24,10 @@ const GameDetailPage = () => {
         <GameAttributes game={game} />
       </GridItem>
       <GridItem>
-        <GameTrailer gameId={game.id} />
-        <GameScreenshots gameId={game.id} />
+        <SimpleGrid columns={1} spacing={5}>
+          <GameTrailer gameId={game.id} />
+          <GameScreenshots gameId={game.id} />
+        </SimpleGrid>
       </GridItem>
     </SimpleGrid>
   )
