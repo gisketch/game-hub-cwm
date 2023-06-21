@@ -5,7 +5,7 @@ interface Props {
   children: string
 }
 
-const ExpendableText = ({ children }: Props) => {
+const ExpandableText = ({ children }: Props) => {
   const [expanded, setExpanded] = useState(false)
 
   const charThreshold = 300
@@ -36,4 +36,4 @@ const ExpendableText = ({ children }: Props) => {
   )
 }
 
-export default ExpendableText
+export default ExpandableText
